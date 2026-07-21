@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Dj Habitat — Couvreur à Saint-Nazaire (44). Pose, réparation et entretien de toiture : tuiles, ardoises, zinc, étanchéité, gouttières. Devis gratuit, intervention rapide. 07 84 59 98 24.">
+<meta name="theme-color" content="#2E3A47">
+<title>Dj Habitat — Couvreur à Saint-Nazaire (44) · Toiture, ardoise, zinc</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='18'%20fill='%232E3A47'/%3E%3Cpath%20d='M20%2058%20L50%2032%20L80%2058%20Z'%20fill='%23C4502A'/%3E%3Crect%20x='20'%20y='58'%20width='60'%20height='10'%20fill='%23E8EDF2'/%3E%3C/svg%3E">
+
+<style>
+/* ===== IMPORT FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:wght@400;500;600&display=swap');
+
+/* ===== TOKENS & RESET ===== */
+:root {
+  /* Palette matières couvreur */
+  --ardoise: #2E3A47;   /* fond principal — bleu-gris ardoise naturelle */
+  --zinc:    #E8EDF2;   /* texte principal / fonds clairs — blanc argenté du zinc */
+  --toit:    #3D4F5E;   /* sections alternées — ardoise plus claire */
+  --brique:  #C4502A;   /* accent signature — rouge brique / tuile */
+  --lauze:   #6B7C8A;   /* texte secondaire — gris lauze */
+  --faite:   #E07050;   /* hover — brique plus clair, faîte du toit */
+
+  /* Écailles de tuiles SVG (demi-ovales en quinconce, fill zinc #E8EDF2) */
+  --ecailles: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='28'%20viewBox='0%200%2040%2028'%3E%3Cg%20fill='%23E8EDF2'%20fill-opacity='0.04'%3E%3Cpath%20d='M0,14%20Q10,0%2020,14%20Z'/%3E%3Cpath%20d='M20,14%20Q30,0%2040,14%20Z'/%3E%3Cpath%20d='M-10,28%20Q0,14%2010,28%20Z'/%3E%3Cpath%20d='M10,28%20Q20,14%2030,28%20Z'/%3E%3Cpath%20d='M30,28%20Q40,14%2050,28%20Z'/%3E%3C/g%3E%3C/svg%3E");
+  --ecailles-soft: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='28'%20viewBox='0%200%2040%2028'%3E%3Cg%20fill='%23E8EDF2'%20fill-opacity='0.03'%3E%3Cpath%20d='M0,14%20Q10,0%2020,14%20Z'/%3E%3Cpath%20d='M20,14%20Q30,0%2040,14%20Z'/%3E%3Cpath%20d='M-10,28%20Q0,14%2010,28%20Z'/%3E%3Cpath%20d='M10,28%20Q20,14%2030,28%20Z'/%3E%3Cpath%20d='M30,28%20Q40,14%2050,28%20Z'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* Layout */
+  --bandeau-h: 36px;
+  --header-h: 64px;
+  --container: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--ardoise);
+  color: var(--zinc);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  padding-top: calc(var(--bandeau-h) + var(--header-h));
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+ul { list-style: none; }
+
+/* ===== HELPERS ===== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
+
+.bg-toit { background-color: var(--toit); background-image: var(--ecailles); background-size: 40px 28px; background-repeat: repeat; }
+.bg-ardoise-ecailles { background-color: var(--ardoise); background-image: var(--ecailles); background-size: 40px 28px; background-repeat: repeat; }
+.bg-hero-ecailles { background-color: var(--ardoise); background-image: var(--ecailles-soft); background-size: 40px 28px; background-repeat: repeat; }
+
+.eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--brique);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--zinc);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.section-pad { padding: 92px 0; }
+
+.lead {
+  color: var(--lauze);
+  font-weight: 400;
+  font-size: 17px;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  padding: 14px 28px;
+  font-size: 15px;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--brique);
+  color: var(--zinc);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+}
+.btn-primary:hover { background: var(--faite); transform: translateY(-1px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--zinc);
+  border: 1px solid var(--zinc);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+}
+.btn-ghost:hover { border-color: var(--brique); color: var(--brique); }
+
+/* ===== 0. BANDEAU ===== */
+.bandeau {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: var(--bandeau-h);
+  background: var(--brique);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+.bandeau p {
+  color: var(--zinc);
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.bandeau a { color: var(--zinc); }
+.bandeau a:hover { text-decoration: underline; }
+
+/* ===== 1. HEADER FIXE ===== */
+.header {
+  position: fixed;
+  top: var(--bandeau-h);
+  left: 0; right: 0;
+  z-index: 999;
+  height: var(--header-h);
+  background: var(--ardoise);
+  border-bottom: 1px solid rgba(196, 80, 42, 0.3);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.header.scrolled {
+  border-bottom-color: rgba(196, 80, 42, 0.65);
+  box-shadow: 0 6px 24px rgba(20, 26, 33, 0.35);
+}
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Logo */
+.logo { display: flex; align-items: baseline; gap: 6px; line-height: 1; }
+.logo .logo-dj { font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--brique); font-size: 24px; }
+.logo .logo-habitat { font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--zinc); font-size: 24px; }
+.logo .logo-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  color: var(--lauze);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 11px;
+  margin-left: 4px;
+}
+
+/* Navigation */
+.nav-desktop { display: flex; align-items: center; gap: 28px; }
+.nav-desktop a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--lauze);
+  transition: color 0.2s ease;
+  position: relative;
+}
+.nav-desktop a:hover { color: var(--brique); }
+.nav-desktop a.active { color: var(--brique); }
+.nav-desktop a.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px;
+  background: var(--brique);
+}
+
+.header-cta {
+  background: var(--brique);
+  color: var(--zinc);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 10px 16px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.header-cta:hover { background: var(--faite); transform: translateY(-1px); }
+
+/* Hamburger */
+.nav-toggle {
+  display: none;
+  width: 42px; height: 42px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px; height: 2px;
+  background: var(--zinc);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile overlay nav */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+  background: var(--ardoise);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-nav.open { opacity: 1; visibility: visible; }
+.mobile-nav a {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--zinc);
+  transition: color 0.2s ease;
+}
+.mobile-nav a:hover { color: var(--brique); }
+.mobile-nav .btn-primary { font-size: 18px; margin-top: 12px; }
+
+/* ===== 2. HERO ===== */
+.hero { padding: 84px 0 96px; }
+.hero-inner { max-width: 720px; }
+.hero h1 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--zinc);
+  font-size: clamp(40px, 8vw, 76px);
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  margin: 8px 0 24px;
+}
+.hero h1 .accent { color: var(--brique); display: block; }
+.hero .hero-sub {
+  color: var(--lauze);
+  font-weight: 400;
+  font-size: 18px;
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+.hero-urgence {
+  background: rgba(196, 80, 42, 0.15);
+  border-left: 3px solid var(--brique);
+  border-radius: 0 4px 4px 0;
+  padding: 12px 20px;
+  max-width: 440px;
+  margin-bottom: 32px;
+  color: var(--zinc);
+  font-weight: 500;
+  font-size: 13px;
+}
+.hero-urgence a { color: var(--zinc); font-weight: 600; }
+.hero-urgence a:hover { color: var(--faite); }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 36px; }
+.hero-ctas .btn-primary { padding: 14px 32px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 12px; }
+.badge {
+  background: var(--toit);
+  color: var(--lauze);
+  border-radius: 4px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ===== 3. SERVICES ===== */
+.services-head { max-width: 620px; margin-bottom: 48px; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.service-card {
+  background: var(--ardoise);
+  border-radius: 6px;
+  border-top: 3px solid var(--brique);
+  padding: 28px 26px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(20, 26, 33, 0.4); }
+.service-card .ic { font-size: 30px; line-height: 1; margin-bottom: 16px; }
+.service-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--zinc);
+  margin-bottom: 10px;
+}
+.service-card p { color: var(--lauze); font-size: 15px; }
+
+/* ===== 4. CLIMAT ATLANTIQUE ===== */
+.climat-head { max-width: 700px; margin-bottom: 24px; }
+.climat-text { color: var(--lauze); font-weight: 400; line-height: 1.8; max-width: 600px; margin-bottom: 48px; }
+.climat-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.climat-point { border-top: 1px solid rgba(196, 80, 42, 0.35); padding-top: 20px; }
+.climat-point .ic { font-size: 28px; margin-bottom: 12px; }
+.climat-point h4 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--zinc);
+  margin-bottom: 8px;
+}
+.climat-point p { color: var(--lauze); font-size: 15px; }
+
+/* ===== 5. RÉALISATIONS ===== */
+.gallery-head { max-width: 620px; margin-bottom: 40px; }
+.gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 4px;
+}
+.gallery-item {
+  position: relative;
+  background: var(--ardoise);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+}
+.gallery-item:first-child { grid-row: 1 / 3; }
+.gallery-item .ph-label {
+  position: relative;
+  z-index: 2;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--lauze);
+  transition: opacity 0.25s ease;
+}
+/* Motif ardoise décoratif dans chaque placeholder */
+.gallery-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--ecailles);
+  background-size: 40px 28px;
+  opacity: 0.5;
+  z-index: 0;
+}
+.gallery-item .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background: rgba(46, 58, 71, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item .overlay span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: var(--brique);
+  font-size: 17px;
+}
+.gallery-item:hover .overlay { opacity: 1; }
+.gallery-item:hover .ph-label { opacity: 0; }
+
+/* ===== 6. PROCESSUS ===== */
+.process-head { max-width: 620px; margin-bottom: 48px; }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.process-step { padding-top: 8px; }
+.process-step .num {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 40px;
+  color: var(--brique);
+  line-height: 1;
+  margin-bottom: 16px;
+  opacity: 0.9;
+}
+.process-step h4 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--zinc);
+  margin-bottom: 10px;
+}
+.process-step p { color: var(--lauze); font-size: 15px; }
+
+/* ===== 7. TÉMOIGNAGES ===== */
+.reviews-head { margin-bottom: 44px; }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.review-card {
+  background: var(--ardoise);
+  border-radius: 6px;
+  border-left: 3px solid var(--brique);
+  padding: 26px 24px;
+  display: flex;
+  flex-direction: column;
+}
+.review-card p.quote { color: var(--zinc); font-size: 15px; margin-bottom: 20px; flex: 1; }
+.review-card .meta { display: flex; flex-direction: column; gap: 4px; }
+.review-card .author { font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--zinc); font-size: 15px; }
+.review-card .stars { color: var(--faite); font-size: 14px; letter-spacing: 0.15em; }
+
+/* ===== 8. CONTACT ===== */
+.contact-head { max-width: 640px; margin-bottom: 44px; }
+.contact-head .lead { margin-top: 12px; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 28px;
+  align-items: start;
+}
+.contact-left {
+  background: rgba(196, 80, 42, 0.08);
+  border: 1px solid rgba(196, 80, 42, 0.25);
+  border-radius: 6px;
+  padding: 28px;
+}
+.contact-left .phone-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--brique);
+  color: var(--zinc);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 19px;
+  border-radius: 4px;
+  padding: 16px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  margin-bottom: 24px;
+}
+.contact-left .phone-cta:hover { background: var(--faite); transform: translateY(-1px); }
+.contact-info-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--lauze);
+  font-size: 15px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(232, 237, 242, 0.1);
+}
+.contact-info-row a { color: var(--lauze); transition: color 0.2s ease; }
+.contact-info-row a:hover { color: var(--brique); }
+.contact-note { color: var(--lauze); font-style: italic; font-size: 13px; margin-top: 16px; }
+
+/* Formulaire */
+.contact-form { display: grid; gap: 20px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--lauze);
+  margin-bottom: 8px;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(232, 237, 242, 0.2);
+  padding: 12px 0;
+  color: var(--zinc);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+.field textarea { resize: vertical; min-height: 96px; }
+.field input::placeholder,
+.field textarea::placeholder { color: rgba(107, 124, 138, 0.75); }
+.field input:focus,
+.field select:focus,
+.field textarea:focus { outline: none; border-bottom-color: var(--brique); }
+.field select { cursor: pointer; }
+.field select option { background: var(--ardoise); color: var(--zinc); }
+.form-submit {
+  width: 100%;
+  background: var(--brique);
+  color: var(--zinc);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 4px;
+  padding: 15px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.form-submit:hover { background: var(--faite); transform: translateY(-1px); }
+.form-feedback {
+  color: var(--faite);
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+/* ===== 9. FOOTER ===== */
+.footer { border-top: 2px solid var(--brique); padding: 48px 0 36px; }
+.footer-logo { display: flex; align-items: baseline; gap: 6px; margin-bottom: 12px; }
+.footer-logo .logo-dj { font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--brique); font-size: 22px; }
+.footer-logo .logo-habitat { font-family: 'Outfit', sans-serif; font-weight: 700; color: var(--zinc); font-size: 22px; }
+.footer p { color: var(--lauze); font-size: 14px; margin-bottom: 6px; }
+.footer a { color: var(--brique); }
+.footer a:hover { color: var(--faite); }
+.footer .footer-contact a { margin-right: 6px; }
+.footer .copy { margin-top: 18px; font-size: 13px; }
+.footer .credit { font-size: 12px; color: var(--lauze); margin-top: 4px; }
+.footer .credit a { color: var(--lauze); }
+.footer .credit a:hover { color: var(--brique); }
+
+/* ===== SCROLL REVEAL ===== */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .nav-desktop, .header-cta { display: none; }
+  .nav-toggle { display: flex; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .section-pad { padding: 68px 0; }
+  .climat-points { grid-template-columns: 1fr; gap: 20px; }
+  .process-grid { grid-template-columns: 1fr; gap: 32px; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gallery-item { min-height: 180px; }
+  .gallery-item:first-child { grid-row: auto; grid-column: 1 / 3; min-height: 220px; }
+}
+
+@media (max-width: 560px) {
+  .container { padding: 0 18px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .bandeau p { font-size: 11px; }
+  .hero-ctas { gap: 10px; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+  .gallery { grid-template-columns: 1fr; }
+  .gallery-item:first-child { grid-column: auto; }
+}
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { transition-duration: 0.001ms; animation-duration: 0.001ms; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 0. BANDEAU ===== -->
+<div class="bandeau">
+  <p>🏗️ Dj Habitat · Couvreur · Saint-Nazaire (44) · <a href="tel:0784599824">07&nbsp;84&nbsp;59&nbsp;98&nbsp;24</a></p>
+</div>
+
+<!-- ===== 1. HEADER FIXE ===== -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <a href="#top" class="logo" aria-label="Dj Habitat — accueil">
+      <span class="logo-dj">Dj</span><span class="logo-habitat">Habitat</span><span class="logo-sub">Couvreur</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#contact">Devis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="tel:0784599824" class="header-cta">📞 07 84 59 98 24</a>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Overlay mobile -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Navigation mobile">
+  <a href="#services" data-close>Services</a>
+  <a href="#realisations" data-close>Réalisations</a>
+  <a href="#contact" data-close>Devis</a>
+  <a href="#contact" data-close>Contact</a>
+  <a href="tel:0784599824" class="btn btn-primary" data-close>📞 07 84 59 98 24</a>
+</nav>
+
+<main id="top">
+
+<!-- ===== 2. HERO ===== -->
+<section class="hero bg-hero-ecailles" id="accueil">
+  <div class="container hero-inner">
+    <span class="eyebrow reveal">Couvreur · Saint-Nazaire · Loire-Atlantique (44)</span>
+    <h1 class="reveal">Votre toit,<span class="accent">protégé des intempéries.</span></h1>
+    <p class="hero-sub reveal">Pose, réparation et entretien de toiture à Saint-Nazaire. Tuiles, ardoises, zinc, gouttières — Dj Habitat intervient rapidement pour protéger votre bien.</p>
+
+    <div class="hero-urgence reveal">
+      ⚡ Fuite ou urgence toiture ? Appelez le <a href="tel:0784599824">07&nbsp;84&nbsp;59&nbsp;98&nbsp;24</a>
+    </div>
+
+    <div class="hero-ctas reveal">
+      <a href="tel:0784599824" class="btn btn-primary">📞 07 84 59 98 24</a>
+      <a href="#contact" class="btn btn-ghost">Demander un devis</a>
+    </div>
+
+    <div class="hero-badges reveal">
+      <span class="badge">🏠 Tuiles &amp; Ardoises</span>
+      <span class="badge">💧 Étanchéité</span>
+      <span class="badge">📍 Saint-Nazaire (44)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. SERVICES ===== -->
+<section class="section-pad bg-toit" id="services">
+  <div class="container">
+    <div class="services-head reveal">
+      <span class="eyebrow">Nos services</span>
+      <h2 class="section-title">Tout pour votre toiture.</h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="ic">🏠</div>
+        <h3>Pose de toiture</h3>
+        <p>Tuiles mécaniques, ardoises naturelles, zinc. Toiture neuve ou réfection complète, posée dans les règles de l'art.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="ic">🔧</div>
+        <h3>Réparation &amp; entretien</h3>
+        <p>Tuile cassée, fuite, chevron endommagé. Intervention rapide pour stopper les infiltrations.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="ic">💧</div>
+        <h3>Étanchéité</h3>
+        <p>Terrasses et toits plats. Membrane, asphalte, relevés d'étanchéité. Garantie imperméabilité durable.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="ic">🌿</div>
+        <h3>Démoussage</h3>
+        <p>Traitement des mousses, lichens et algues. Nettoyage et application d'hydrofuge pour prolonger la durée de vie.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="ic">🌧️</div>
+        <h3>Gouttières</h3>
+        <p>Pose, remplacement et nettoyage. Zinc, PVC, aluminium laqué. Évacuation optimisée des eaux pluviales.</p>
+      </article>
+      <article class="service-card reveal">
+        <div class="ic">🔲</div>
+        <h3>Velux &amp; Lucarnes</h3>
+        <p>Pose et remplacement de fenêtres de toit. Lucarnes maçonnées ou charpentées selon votre projet.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. CLIMAT ATLANTIQUE ===== -->
+<section class="section-pad" id="climat">
+  <div class="container">
+    <div class="climat-head reveal">
+      <span class="eyebrow">Saint-Nazaire &amp; l'Atlantique</span>
+      <h2 class="section-title">Vents, pluie, embruns — votre toit mérite le meilleur.</h2>
+    </div>
+    <p class="climat-text reveal">À Saint-Nazaire et sur la côte atlantique, les toitures subissent des contraintes climatiques parmi les plus sévères de France. Les vents dominants de l'ouest, les précipitations fréquentes et les embruns marins dégradent les matériaux plus vite qu'ailleurs. Dj Habitat connaît ces spécificités locales et utilise des matériaux et des techniques adaptés au climat atlantique.</p>
+
+    <div class="climat-points">
+      <div class="climat-point reveal">
+        <div class="ic">💨</div>
+        <h4>Vents violents</h4>
+        <p>Fixations renforcées, risbermes soignées.</p>
+      </div>
+      <div class="climat-point reveal">
+        <div class="ic">🌧️</div>
+        <h4>Pluies fréquentes</h4>
+        <p>Étanchéité maîtrisée, pentes calculées.</p>
+      </div>
+      <div class="climat-point reveal">
+        <div class="ic">🌊</div>
+        <h4>Embruns</h4>
+        <p>Matériaux résistants à la corrosion saline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. RÉALISATIONS ===== -->
+<section class="section-pad bg-toit" id="realisations">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <span class="eyebrow">Réalisations</span>
+      <h2 class="section-title">Des toitures posées dans le 44.</h2>
+    </div>
+
+    <div class="gallery reveal">
+      <div class="gallery-item">
+        <span class="ph-label">Toiture ardoise — maison Saint-Nazaire</span>
+        <div class="overlay"><span>Toiture ardoise — Saint-Nazaire</span></div>
+      </div>
+      <div class="gallery-item">
+        <span class="ph-label">Réfection tuiles — pavillon 44</span>
+        <div class="overlay"><span>Réfection tuiles — 44</span></div>
+      </div>
+      <div class="gallery-item">
+        <span class="ph-label">Gouttières zinc — façade atlantique</span>
+        <div class="overlay"><span>Gouttières zinc</span></div>
+      </div>
+      <div class="gallery-item">
+        <span class="ph-label">Étanchéité terrasse — toit plat</span>
+        <div class="overlay"><span>Étanchéité terrasse</span></div>
+      </div>
+      <div class="gallery-item">
+        <span class="ph-label">Démoussage — toiture ancienne</span>
+        <div class="overlay"><span>Démoussage</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. PROCESSUS ===== -->
+<section class="section-pad" id="processus">
+  <div class="container">
+    <div class="process-head reveal">
+      <span class="eyebrow">Comment ça marche</span>
+      <h2 class="section-title">Rapide, clair, sans surprise.</h2>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <div class="num">01</div>
+        <h4>Vous appelez</h4>
+        <p>07 84 59 98 24. On évalue rapidement votre besoin — urgence ou projet planifié — et on organise une visite.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="num">02</div>
+        <h4>Inspection &amp; devis</h4>
+        <p>On monte sur le toit, on diagnostique précisément. Devis clair et gratuit sous 48h.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="num">03</div>
+        <h4>On intervient</h4>
+        <p>Travail soigné, sécurité respectée, chantier propre. Votre toit protège à nouveau votre maison.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 7. TÉMOIGNAGES ===== -->
+<section class="section-pad bg-toit" id="temoignages">
+  <div class="container">
+    <div class="reviews-head reveal">
+      <span class="eyebrow">Avis clients</span>
+      <h2 class="section-title">Ils nous font confiance.</h2>
+    </div>
+
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <p class="quote">« Toiture ardoise refaite entièrement après une tempête. Jimmy est venu le lendemain pour inspecter, devis rapide, travaux réalisés en une semaine. Impeccable. »</p>
+        <div class="meta">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="author">Laurent M., Saint-Nazaire (44)</span>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <p class="quote">« Fuite récurrente enfin réparée. Deux couvreurs avaient essayé avant Dj Habitat. Jimmy a trouvé l'origine du problème dès la première visite. Efficace et honnête. »</p>
+        <div class="meta">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="author">Marie-Hélène T., Pornic (44)</span>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <p class="quote">« Gouttières zinc posées proprement, aucune coulure sur la façade. Prix correct, travail soigné. Je recommande pour tous travaux de toiture dans le 44. »</p>
+        <div class="meta">
+          <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
+          <span class="author">Thierry B., Saint-Brévin (44)</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 8. CONTACT ===== -->
+<section class="section-pad bg-ardoise-ecailles" id="contact">
+  <div class="container">
+    <div class="contact-head reveal">
+      <span class="eyebrow">Contact &amp; devis</span>
+      <h2 class="section-title">Parlons de votre toiture.</h2>
+      <p class="lead">Devis gratuit · Saint-Nazaire &amp; Loire-Atlantique (44)</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Bloc gauche -->
+      <div class="contact-left reveal">
+        <a href="tel:0784599824" class="phone-cta">📞 07 84 59 98 24</a>
+        <div class="contact-info-row">✉️ <a href="mailto:djhabitat72@gmail.com">djhabitat72@gmail.com</a></div>
+        <div class="contact-info-row">📍 Saint-Nazaire · Loire-Atlantique (44)</div>
+        <p class="contact-note">⚡ Urgence toiture ? Appelez directement.</p>
+      </div>
+
+      <!-- Bloc droit — formulaire -->
+      <form class="contact-form reveal" action="#" method="post" id="devisForm" novalidate>
+        <div class="form-row">
+          <div class="field">
+            <label for="nom">Prénom &amp; Nom</label>
+            <input type="text" id="nom" name="nom" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="tel">Téléphone</label>
+            <input type="tel" id="tel" name="tel" autocomplete="tel" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="type">Type de travaux</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Choisir…</option>
+            <option>Réparation &amp; fuite urgente</option>
+            <option>Réfection complète</option>
+            <option>Tuiles &amp; ardoises</option>
+            <option>Étanchéité</option>
+            <option>Gouttières</option>
+            <option>Démoussage</option>
+            <option>Velux &amp; Lucarnes</option>
+            <option>Autre</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="message">Description</label>
+          <textarea id="message" name="message" placeholder="Type de toiture, surface approximative, problème constaté..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Envoyer ma demande</button>
+        <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== 9. FOOTER ===== -->
+<footer class="footer bg-toit">
+  <div class="container">
+    <div class="footer-logo">
+      <span class="logo-dj">Dj</span><span class="logo-habitat">Habitat</span>
+    </div>
+    <p>Couvreur · Saint-Nazaire · Loire-Atlantique (44)</p>
+    <p class="footer-contact"><a href="tel:0784599824">07 84 59 98 24</a> · <a href="mailto:djhabitat72@gmail.com">djhabitat72@gmail.com</a></p>
+    <p class="copy">© 2026 Dj Habitat — Tous droits réservés</p>
+    <p class="credit">Site réalisé par <a href="https://paymentflow.fr" target="_blank" rel="noopener">Payment Flow</a></p>
+  </div>
+</footer>
+
+<script>
+'use strict';
+(function () {
+  /* ===== HAMBURGER MOBILE ===== */
+  const toggle = document.getElementById('navToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  function setMenu(open) {
+    toggle.classList.toggle('open', open);
+    mobileNav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  toggle.addEventListener('click', function () {
+    setMenu(!mobileNav.classList.contains('open'));
+  });
+  mobileNav.querySelectorAll('[data-close]').forEach(function (link) {
+    link.addEventListener('click', function () { setMenu(false); });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) { setMenu(false); }
+  });
+
+  /* ===== HEADER SCROLL — intensification bordure ===== */
+  const header = document.getElementById('header');
+  function onScroll() {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ===== SCROLL REVEAL (IntersectionObserver + stagger) ===== */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const revealEls = document.querySelectorAll('.reveal');
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach(function (el) { el.classList.add('revealed'); });
+  } else {
+    const observer = new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const delay = Number(el.dataset.delay || 0);
+          el.style.transitionDelay = delay + 'ms';
+          el.classList.add('revealed');
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    // Stagger 0.08s entre éléments frères d'un même conteneur
+    const groups = new Map();
+    revealEls.forEach(function (el) {
+      const parent = el.parentElement;
+      const list = groups.get(parent) || [];
+      list.push(el);
+      groups.set(parent, list);
+    });
+    groups.forEach(function (list) {
+      list.forEach(function (el, i) {
+        el.dataset.delay = String(i * 80);
+        observer.observe(el);
+      });
+    });
+  }
+
+  /* ===== SCROLLSPY — lien de nav actif ===== */
+  const navLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-desktop a'));
+  const sectionIds = ['services', 'realisations', 'contact'];
+  const spySections = sectionIds
+    .map(function (id) { return document.getElementById(id); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && spySections.length) {
+    const spyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navLinks.forEach(function (link) {
+            const href = link.getAttribute('href');
+            link.classList.toggle('active', href === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+    spySections.forEach(function (s) { spyObserver.observe(s); });
+  }
+
+  /* ===== FORMULAIRE — feedback (action="#" à remplacer par Web3Forms/Formspree) ===== */
+  const form = document.getElementById('devisForm');
+  const feedback = document.getElementById('formFeedback');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      feedback.textContent = 'Merci de compléter les champs requis.';
+      form.reportValidity();
+      return;
+    }
+    feedback.textContent = 'Merci ! Votre demande est prête à être envoyée — connectez le formulaire (Web3Forms / Formspree) pour l\'activer.';
+    form.reset();
+  });
+})();
+</script>
+
+</body>
+</html>
