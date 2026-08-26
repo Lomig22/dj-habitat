@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Dj Habitat — Couvreur à Saint-Nazaire (44). Pose, réparation et entretien de toiture : tuiles, ardoises, zinc, étanchéité, gouttières. Devis gratuit, intervention rapide. 07 84 59 98 24.">
+<meta name="description" content="Dj Habitat — Couvreur au Mans (72). Pose, réparation et entretien de toiture : tuiles, ardoises, zinc, étanchéité, gouttières. Devis gratuit, intervention rapide au Mans et dans toute la Sarthe. 07 84 59 98 24.">
 <meta name="theme-color" content="#2E3A47">
-<title>Dj Habitat — Couvreur à Saint-Nazaire (44) · Toiture, ardoise, zinc</title>
+<link rel="preload" as="image" href="img/hero-chantier.webp">
+<title>Dj Habitat — Couvreur au Mans (72) · Toiture, ardoise, zinc</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Crect%20width='100'%20height='100'%20rx='18'%20fill='%232E3A47'/%3E%3Cpath%20d='M20%2058%20L50%2032%20L80%2058%20Z'%20fill='%23C4502A'/%3E%3Crect%20x='20'%20y='58'%20width='60'%20height='10'%20fill='%23E8EDF2'/%3E%3C/svg%3E">
 
 <style>
@@ -26,9 +27,9 @@
   --ecailles: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='28'%20viewBox='0%200%2040%2028'%3E%3Cg%20fill='%23E8EDF2'%20fill-opacity='0.04'%3E%3Cpath%20d='M0,14%20Q10,0%2020,14%20Z'/%3E%3Cpath%20d='M20,14%20Q30,0%2040,14%20Z'/%3E%3Cpath%20d='M-10,28%20Q0,14%2010,28%20Z'/%3E%3Cpath%20d='M10,28%20Q20,14%2030,28%20Z'/%3E%3Cpath%20d='M30,28%20Q40,14%2050,28%20Z'/%3E%3C/g%3E%3C/svg%3E");
   --ecailles-soft: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='40'%20height='28'%20viewBox='0%200%2040%2028'%3E%3Cg%20fill='%23E8EDF2'%20fill-opacity='0.03'%3E%3Cpath%20d='M0,14%20Q10,0%2020,14%20Z'/%3E%3Cpath%20d='M20,14%20Q30,0%2040,14%20Z'/%3E%3Cpath%20d='M-10,28%20Q0,14%2010,28%20Z'/%3E%3Cpath%20d='M10,28%20Q20,14%2030,28%20Z'/%3E%3Cpath%20d='M30,28%20Q40,14%2050,28%20Z'/%3E%3C/g%3E%3C/svg%3E");
 
-  /* Photo hero — Unsplash (toiture patinée, Greg Rosenke). Seule dépendance
-     externe : remplacer par une vraie photo de chantier local si souhaité. */
-  --hero-photo: url("https://images.unsplash.com/photo-1603517431529-6ba96d7525bb?auto=format&fit=crop&w=2000&q=70");
+  /* Photo hero — chantier Dj Habitat (pose de tuiles, couvreur sur le toit).
+     Export WebP 1600 px ; originaux dans img/sources/ (non versionnés). */
+  --hero-photo: url("img/hero-chantier.webp");
 
   /* Layout */
   --bandeau-h: 36px;
@@ -273,7 +274,7 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
     var(--ecailles-soft),
     var(--hero-photo);
   background-size: auto, 40px 28px, cover;
-  background-position: center, top left, center right;
+  background-position: center, top left, right 30%;
   background-repeat: no-repeat, repeat, no-repeat;
 }
 .hero-inner { max-width: 720px; }
@@ -354,7 +355,7 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
 }
 .service-card p { color: var(--lauze); font-size: 15px; }
 
-/* ===== 4. CLIMAT ATLANTIQUE ===== */
+/* ===== 4. CLIMAT SARTHOIS ===== */
 .climat-head { max-width: 700px; margin-bottom: 24px; }
 .climat-text { color: var(--lauze); font-weight: 400; line-height: 1.8; max-width: 600px; margin-bottom: 48px; }
 .climat-points {
@@ -375,61 +376,93 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
 
 /* ===== 5. RÉALISATIONS ===== */
 .gallery-head { max-width: 620px; margin-bottom: 40px; }
+.gallery-intro { color: var(--lauze); font-size: 15px; margin-top: 14px; }
 .gallery {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 240px 240px;
-  gap: 4px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 6px;
 }
 .gallery-item {
   position: relative;
+  display: block;
   background: var(--ardoise);
   border-radius: 4px;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  padding: 18px;
 }
-.gallery-item:first-child { grid-row: 1 / 3; }
-.gallery-item .ph-label {
-  position: relative;
-  z-index: 2;
+.gallery-item.is-feature { grid-column: span 2; grid-row: span 2; }
+.gallery-item[hidden] { display: none; }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img,
+.gallery-item:focus-visible img { transform: scale(1.04); }
+.gallery-item:focus-visible { outline: 2px solid var(--brique); outline-offset: 2px; }
+/* Légende en bas de photo, sur dégradé ardoise */
+.gallery-item .cap {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 36px 16px 14px;
   font-size: 13px;
   font-weight: 500;
-  color: var(--lauze);
-  transition: opacity 0.25s ease;
+  color: var(--zinc);
+  background: linear-gradient(180deg, rgba(46, 58, 71, 0) 0%, rgba(46, 58, 71, 0.85) 100%);
+  z-index: 2;
 }
-/* Motif ardoise décoratif dans chaque placeholder */
-.gallery-item::before {
-  content: "";
-  position: absolute;
+.gallery-more { display: flex; justify-content: center; margin-top: 28px; }
+.gallery-more[hidden] { display: none; }
+
+/* ===== LIGHTBOX GALERIE ===== */
+.lightbox {
+  position: fixed;
   inset: 0;
-  background-image: var(--ecailles);
-  background-size: 40px 28px;
-  opacity: 0.5;
-  z-index: 0;
-}
-.gallery-item .overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  background: rgba(46, 58, 71, 0.7);
+  z-index: 1000;
+  background: rgba(30, 38, 47, 0.94);
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  padding: 56px 76px;
 }
-.gallery-item .overlay span {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  color: var(--brique);
-  font-size: 17px;
+.lightbox[hidden] { display: none; }
+.lightbox figure {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
-.gallery-item:hover .overlay { opacity: 1; }
-.gallery-item:hover .ph-label { opacity: 0; }
+.lightbox img {
+  max-width: 100%;
+  max-height: calc(100vh - 150px);
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.lightbox figcaption { color: var(--zinc); font-size: 14px; font-weight: 500; text-align: center; }
+.lb-btn {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(232, 237, 242, 0.18);
+  background: rgba(232, 237, 242, 0.08);
+  color: var(--zinc);
+  font-size: 26px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.lb-btn:hover, .lb-btn:focus-visible { background: var(--brique); border-color: var(--brique); outline: none; }
+.lb-close { top: 16px; right: 16px; font-size: 20px; }
+.lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+.lb-count { position: absolute; top: 28px; left: 20px; color: var(--lauze); font-size: 13px; font-weight: 500; }
 
 /* ===== 6. PROCESSUS ===== */
 .process-head { max-width: 620px; margin-bottom: 48px; }
@@ -610,9 +643,11 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
   .climat-points { grid-template-columns: 1fr; gap: 20px; }
   .process-grid { grid-template-columns: 1fr; gap: 32px; }
   .reviews-grid { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .gallery-item { min-height: 180px; }
-  .gallery-item:first-child { grid-row: auto; grid-column: 1 / 3; min-height: 220px; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; }
+  .gallery-item .cap { padding: 28px 10px 10px; font-size: 12px; }
+  .lightbox { padding: 64px 12px 24px; }
+  .lb-prev { left: 8px; }
+  .lb-next { right: 8px; }
 }
 
 @media (max-width: 560px) {
@@ -622,8 +657,7 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
   .bandeau p { font-size: 11px; }
   .hero-ctas { gap: 10px; }
   .hero-ctas .btn { width: 100%; justify-content: center; }
-  .gallery { grid-template-columns: 1fr; }
-  .gallery-item:first-child { grid-column: auto; }
+  .gallery { grid-auto-rows: 150px; gap: 4px; }
 }
 
 /* ===== REDUCED MOTION ===== */
@@ -638,7 +672,7 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
 
 <!-- ===== 0. BANDEAU ===== -->
 <div class="bandeau">
-  <p>🏗️ Dj Habitat · Couvreur · Saint-Nazaire (44) · <a href="tel:0784599824">07&nbsp;84&nbsp;59&nbsp;98&nbsp;24</a></p>
+  <p>🏗️ Dj Habitat · Couvreur · Le Mans (72) · <a href="tel:0784599824">07&nbsp;84&nbsp;59&nbsp;98&nbsp;24</a></p>
 </div>
 
 <!-- ===== 1. HEADER FIXE ===== -->
@@ -677,9 +711,9 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
 <!-- ===== 2. HERO ===== -->
 <section class="hero" id="accueil">
   <div class="container hero-inner">
-    <span class="eyebrow reveal">Couvreur · Saint-Nazaire · Loire-Atlantique (44)</span>
+    <span class="eyebrow reveal">Couvreur · Le Mans · Sarthe (72)</span>
     <h1 class="reveal">Votre toit,<span class="accent">protégé des intempéries.</span></h1>
-    <p class="hero-sub reveal">Pose, réparation et entretien de toiture à Saint-Nazaire. Tuiles, ardoises, zinc, gouttières — Dj Habitat intervient rapidement pour protéger votre bien.</p>
+    <p class="hero-sub reveal">Pose, réparation et entretien de toiture au Mans et dans toute la Sarthe. Tuiles, ardoises, zinc, gouttières — Dj Habitat intervient rapidement pour protéger votre bien.</p>
 
     <div class="hero-urgence reveal">
       ⚡ Fuite ou urgence toiture ? Appelez le <a href="tel:0784599824">07&nbsp;84&nbsp;59&nbsp;98&nbsp;24</a>
@@ -693,7 +727,7 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
     <div class="hero-badges reveal">
       <span class="badge">🏠 Tuiles &amp; Ardoises</span>
       <span class="badge">💧 Étanchéité</span>
-      <span class="badge">📍 Saint-Nazaire (44)</span>
+      <span class="badge">📍 Le Mans (72)</span>
     </div>
   </div>
 </section>
@@ -741,30 +775,30 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
   </div>
 </section>
 
-<!-- ===== 4. CLIMAT ATLANTIQUE ===== -->
+<!-- ===== 4. CLIMAT SARTHOIS ===== -->
 <section class="section-pad" id="climat">
   <div class="container">
     <div class="climat-head reveal">
-      <span class="eyebrow">Saint-Nazaire &amp; l'Atlantique</span>
-      <h2 class="section-title">Vents, pluie, embruns — votre toit mérite le meilleur.</h2>
+      <span class="eyebrow">Le Mans &amp; la Sarthe</span>
+      <h2 class="section-title">Pluie, gel, mousses — votre toit mérite le meilleur.</h2>
     </div>
-    <p class="climat-text reveal">À Saint-Nazaire et sur la côte atlantique, les toitures subissent des contraintes climatiques parmi les plus sévères de France. Les vents dominants de l'ouest, les précipitations fréquentes et les embruns marins dégradent les matériaux plus vite qu'ailleurs. Dj Habitat connaît ces spécificités locales et utilise des matériaux et des techniques adaptés au climat atlantique.</p>
+    <p class="climat-text reveal">Au Mans et dans toute la Sarthe, le climat océanique dégradé met les toitures à rude épreuve : pluies régulières, humidité persistante, gel et dégel à répétition en hiver, orages et grêle à la belle saison. Tuiles qui se fissurent, mousses qui s'installent, gouttières qui débordent — Dj Habitat connaît les toits sarthois, de la petite tuile plate à l'ardoise, et utilise des matériaux et des techniques adaptés à ces contraintes locales.</p>
 
     <div class="climat-points">
       <div class="climat-point reveal">
-        <div class="ic">💨</div>
-        <h4>Vents violents</h4>
-        <p>Fixations renforcées, risbermes soignées.</p>
-      </div>
-      <div class="climat-point reveal">
         <div class="ic">🌧️</div>
-        <h4>Pluies fréquentes</h4>
+        <h4>Pluies &amp; humidité</h4>
         <p>Étanchéité maîtrisée, pentes calculées.</p>
       </div>
       <div class="climat-point reveal">
-        <div class="ic">🌊</div>
-        <h4>Embruns</h4>
-        <p>Matériaux résistants à la corrosion saline.</p>
+        <div class="ic">❄️</div>
+        <h4>Gel &amp; dégel</h4>
+        <p>Tuiles ingélives, solins et faîtages soignés.</p>
+      </div>
+      <div class="climat-point reveal">
+        <div class="ic">🌿</div>
+        <h4>Mousses &amp; lichens</h4>
+        <p>Démoussage, hydrofuge, toiture qui respire.</p>
       </div>
     </div>
   </div>
@@ -775,30 +809,83 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
   <div class="container">
     <div class="gallery-head reveal">
       <span class="eyebrow">Réalisations</span>
-      <h2 class="section-title">Des toitures posées dans le 44.</h2>
+      <h2 class="section-title">Des toitures posées dans la Sarthe.</h2>
+      <p class="gallery-intro">Ardoise, tuile, zinc — un aperçu de nos chantiers. Cliquez sur une photo pour l'agrandir.</p>
     </div>
 
-    <div class="gallery reveal">
-      <div class="gallery-item">
-        <span class="ph-label">Toiture ardoise — maison Saint-Nazaire</span>
-        <div class="overlay"><span>Toiture ardoise — Saint-Nazaire</span></div>
-      </div>
-      <div class="gallery-item">
-        <span class="ph-label">Réfection tuiles — pavillon 44</span>
-        <div class="overlay"><span>Réfection tuiles — 44</span></div>
-      </div>
-      <div class="gallery-item">
-        <span class="ph-label">Gouttières zinc — façade atlantique</span>
-        <div class="overlay"><span>Gouttières zinc</span></div>
-      </div>
-      <div class="gallery-item">
-        <span class="ph-label">Étanchéité terrasse — toit plat</span>
-        <div class="overlay"><span>Étanchéité terrasse</span></div>
-      </div>
-      <div class="gallery-item">
-        <span class="ph-label">Démoussage — toiture ancienne</span>
-        <div class="overlay"><span>Démoussage</span></div>
-      </div>
+    <div class="gallery reveal" id="gallery">
+      <a href="img/realisations/01-ardoise-cheminee-apres-1600.webp" class="gallery-item is-feature">
+        <img src="img/realisations/01-ardoise-cheminee-apres-800.webp" srcset="img/realisations/01-ardoise-cheminee-apres-800.webp 800w, img/realisations/01-ardoise-cheminee-apres-1600.webp 1600w" sizes="(max-width: 768px) 100vw, 560px" width="627" height="800" alt="Toiture en ardoise refaite à neuf autour d&#x27;une cheminée en brique, gouttière zinc neuve" loading="lazy" decoding="async">
+        <span class="cap">Réfection ardoise &amp; cheminée — après</span>
+      </a>
+      <a href="img/realisations/02-ardoise-charpente-liteaux-1600.webp" class="gallery-item">
+        <img src="img/realisations/02-ardoise-charpente-liteaux-800.webp" srcset="img/realisations/02-ardoise-charpente-liteaux-800.webp 800w, img/realisations/02-ardoise-charpente-liteaux-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="636" height="800" alt="Chantier de réfection : liteaux neufs posés sur la charpente avant la pose des ardoises" loading="lazy" decoding="async">
+        <span class="cap">Réfection ardoise — charpente &amp; liteaux</span>
+      </a>
+      <a href="img/realisations/03-ardoise-pavillon-1600.webp" class="gallery-item">
+        <img src="img/realisations/03-ardoise-pavillon-800.webp" srcset="img/realisations/03-ardoise-pavillon-800.webp 800w, img/realisations/03-ardoise-pavillon-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="800" height="600" alt="Pavillon aux volets bleus avec toiture en ardoise rénovée" loading="lazy" decoding="async">
+        <span class="cap">Toiture ardoise — pavillon</span>
+      </a>
+      <a href="img/realisations/04-cheneau-zinc-1600.webp" class="gallery-item">
+        <img src="img/realisations/04-cheneau-zinc-800.webp" srcset="img/realisations/04-cheneau-zinc-800.webp 800w, img/realisations/04-cheneau-zinc-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="614" height="800" alt="Chéneau en zinc neuf posé le long d&#x27;une toiture, tuiles empilées prêtes à poser" loading="lazy" decoding="async">
+        <span class="cap">Chéneau zinc — zinguerie sur mesure</span>
+      </a>
+      <a href="img/realisations/05-pose-tuiles-pendant-1600.webp" class="gallery-item">
+        <img style="object-position: 50% 70%" src="img/realisations/05-pose-tuiles-pendant-800.webp" srcset="img/realisations/05-pose-tuiles-pendant-800.webp 800w, img/realisations/05-pose-tuiles-pendant-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="500" height="800" alt="Pose de tuiles canal sur liteaux, vue depuis le toit pendant le chantier" loading="lazy" decoding="async">
+        <span class="cap">Pose de tuiles — pendant</span>
+      </a>
+      <a href="img/realisations/06-tuiles-avant-1600.webp" class="gallery-item">
+        <img style="object-position: 50% 75%" src="img/realisations/06-tuiles-avant-800.webp" srcset="img/realisations/06-tuiles-avant-800.webp 800w, img/realisations/06-tuiles-avant-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="553" height="800" alt="Toiture en tuiles ancienne, moussue et encrassée, avant intervention" loading="lazy" decoding="async">
+        <span class="cap">Toiture tuiles — avant</span>
+      </a>
+      <a href="img/realisations/07-tuiles-apres-1600.webp" class="gallery-item">
+        <img style="object-position: 50% 75%" src="img/realisations/07-tuiles-apres-800.webp" srcset="img/realisations/07-tuiles-apres-800.webp 800w, img/realisations/07-tuiles-apres-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="520" height="800" alt="Toiture en tuiles neuves, propre et uniforme, après intervention" loading="lazy" decoding="async">
+        <span class="cap">Toiture tuiles — après</span>
+      </a>
+      <a href="img/realisations/08-ecran-sous-toiture-1600.webp" class="gallery-item">
+        <img src="img/realisations/08-ecran-sous-toiture-800.webp" srcset="img/realisations/08-ecran-sous-toiture-800.webp 800w, img/realisations/08-ecran-sous-toiture-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="586" height="800" alt="Écran de sous-toiture déroulé sur la charpente avec contre-liteaux" loading="lazy" decoding="async">
+        <span class="cap">Écran de sous-toiture &amp; liteaunage</span>
+      </a>
+      <a href="img/realisations/09-ardoise-intervention-1600.webp" class="gallery-item">
+        <img src="img/realisations/09-ardoise-intervention-800.webp" srcset="img/realisations/09-ardoise-intervention-800.webp 800w, img/realisations/09-ardoise-intervention-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="800" height="600" alt="Couvreur au faîtage d&#x27;une toiture en ardoise, échelle posée contre la maison" loading="lazy" decoding="async">
+        <span class="cap">Toiture ardoise — intervention</span>
+      </a>
+      <a href="img/realisations/10-ardoise-renovation-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/10-ardoise-renovation-800.webp" srcset="img/realisations/10-ardoise-renovation-800.webp 800w, img/realisations/10-ardoise-renovation-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="800" height="593" alt="Maison en cours de rénovation de toiture ardoise, échafaudage en façade" loading="lazy" decoding="async">
+        <span class="cap">Ardoise — rénovation en cours</span>
+      </a>
+      <a href="img/realisations/11-sortie-de-toit-etancheite-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/11-sortie-de-toit-etancheite-800.webp" srcset="img/realisations/11-sortie-de-toit-etancheite-800.webp 800w, img/realisations/11-sortie-de-toit-etancheite-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="559" height="800" alt="Conduit de sortie de toit avec solin d&#x27;étanchéité neuf sur toiture en tuiles" loading="lazy" decoding="async">
+        <span class="cap">Sortie de toit — étanchéité refaite</span>
+      </a>
+      <a href="img/realisations/12-liteaunage-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/12-liteaunage-800.webp" srcset="img/realisations/12-liteaunage-800.webp 800w, img/realisations/12-liteaunage-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="552" height="800" alt="Liteaux neufs alignés sur écran de sous-toiture, avant pose de la couverture" loading="lazy" decoding="async">
+        <span class="cap">Liteaunage sur écran de sous-toiture</span>
+      </a>
+      <a href="img/realisations/13-cheneau-zinc-detail-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/13-cheneau-zinc-detail-800.webp" srcset="img/realisations/13-cheneau-zinc-detail-800.webp 800w, img/realisations/13-cheneau-zinc-detail-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="627" height="800" alt="Détail d&#x27;un chéneau en zinc soudé, tuiles neuves empilées au-dessus" loading="lazy" decoding="async">
+        <span class="cap">Chéneau zinc — détail</span>
+      </a>
+      <a href="img/realisations/14-ardoise-pavillon-camion-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/14-ardoise-pavillon-camion-800.webp" srcset="img/realisations/14-ardoise-pavillon-camion-800.webp 800w, img/realisations/14-ardoise-pavillon-camion-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="800" height="600" alt="Camion Dj Habitat devant un pavillon dont la toiture ardoise vient d&#x27;être refaite" loading="lazy" decoding="async">
+        <span class="cap">Réfection ardoise — pavillon</span>
+      </a>
+      <a href="img/realisations/15-ardoise-renovee-detail-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/15-ardoise-renovee-detail-800.webp" srcset="img/realisations/15-ardoise-renovee-detail-800.webp 800w, img/realisations/15-ardoise-renovee-detail-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="800" height="600" alt="Toiture en ardoise rénovée d&#x27;un pavillon aux volets bleus, échelle en façade" loading="lazy" decoding="async">
+        <span class="cap">Toiture ardoise rénovée</span>
+      </a>
+      <a href="img/realisations/16-nacelle-commercial-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/16-nacelle-commercial-800.webp" srcset="img/realisations/16-nacelle-commercial-800.webp 800w, img/realisations/16-nacelle-commercial-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="800" height="609" alt="Camion nacelle Dj Habitat devant un magasin pour une intervention en hauteur" loading="lazy" decoding="async">
+        <span class="cap">Intervention en nacelle — bâtiment commercial</span>
+      </a>
+      <a href="img/realisations/17-nacelle-restaurant-1600.webp" class="gallery-item" hidden>
+        <img src="img/realisations/17-nacelle-restaurant-800.webp" srcset="img/realisations/17-nacelle-restaurant-800.webp 800w, img/realisations/17-nacelle-restaurant-1600.webp 1600w" sizes="(max-width: 768px) 50vw, 280px" width="800" height="600" alt="Camion nacelle déployé pour une intervention sur la toiture d&#x27;un bar-restaurant" loading="lazy" decoding="async">
+        <span class="cap">Intervention en nacelle — commerce</span>
+      </a>
+    </div>
+
+    <div class="gallery-more">
+      <button type="button" class="btn btn-ghost" id="galleryMore" aria-expanded="false" aria-controls="gallery">Voir plus de réalisations (8)</button>
     </div>
   </div>
 </section>
@@ -844,21 +931,21 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
         <p class="quote">« Toiture ardoise refaite entièrement après une tempête. Jimmy est venu le lendemain pour inspecter, devis rapide, travaux réalisés en une semaine. Impeccable. »</p>
         <div class="meta">
           <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
-          <span class="author">Laurent M., Saint-Nazaire (44)</span>
+          <span class="author">Laurent M., Le Mans (72)</span>
         </div>
       </article>
       <article class="review-card reveal">
         <p class="quote">« Fuite récurrente enfin réparée. Deux couvreurs avaient essayé avant Dj Habitat. Jimmy a trouvé l'origine du problème dès la première visite. Efficace et honnête. »</p>
         <div class="meta">
           <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
-          <span class="author">Marie-Hélène T., Pornic (44)</span>
+          <span class="author">Marie-Hélène T., Coulaines (72)</span>
         </div>
       </article>
       <article class="review-card reveal">
-        <p class="quote">« Gouttières zinc posées proprement, aucune coulure sur la façade. Prix correct, travail soigné. Je recommande pour tous travaux de toiture dans le 44. »</p>
+        <p class="quote">« Gouttières zinc posées proprement, aucune coulure sur la façade. Prix correct, travail soigné. Je recommande pour tous travaux de toiture dans la Sarthe. »</p>
         <div class="meta">
           <span class="stars" aria-label="5 étoiles sur 5">★★★★★</span>
-          <span class="author">Thierry B., Saint-Brévin (44)</span>
+          <span class="author">Thierry B., La Flèche (72)</span>
         </div>
       </article>
     </div>
@@ -871,7 +958,7 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
     <div class="contact-head reveal">
       <span class="eyebrow">Contact &amp; devis</span>
       <h2 class="section-title">Parlons de votre toiture.</h2>
-      <p class="lead">Devis gratuit · Saint-Nazaire &amp; Loire-Atlantique (44)</p>
+      <p class="lead">Devis gratuit · Le Mans &amp; Sarthe (72)</p>
     </div>
 
     <div class="contact-grid">
@@ -879,7 +966,7 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
       <div class="contact-left reveal">
         <a href="tel:0784599824" class="phone-cta">📞 07 84 59 98 24</a>
         <div class="contact-info-row">✉️ <a href="mailto:djhabitat72@gmail.com">djhabitat72@gmail.com</a></div>
-        <div class="contact-info-row">📍 Saint-Nazaire · Loire-Atlantique (44)</div>
+        <div class="contact-info-row">📍 Le Mans · Sarthe (72)</div>
         <p class="contact-note">⚡ Urgence toiture ? Appelez directement.</p>
       </div>
 
@@ -936,12 +1023,24 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
     <div class="footer-logo">
       <span class="logo-dj">Dj</span><span class="logo-habitat">Habitat</span>
     </div>
-    <p>Couvreur · Saint-Nazaire · Loire-Atlantique (44)</p>
+    <p>Couvreur · Le Mans · Sarthe (72)</p>
     <p class="footer-contact"><a href="tel:0784599824">07 84 59 98 24</a> · <a href="mailto:djhabitat72@gmail.com">djhabitat72@gmail.com</a></p>
     <p class="copy">© 2026 Dj Habitat — Tous droits réservés</p>
     <p class="credit">Site réalisé par <a href="https://paymentflow.fr" target="_blank" rel="noopener">Payment Flow</a></p>
   </div>
 </footer>
+
+<!-- ===== LIGHTBOX GALERIE ===== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo agrandie" hidden>
+  <p class="lb-count" id="lbCount" aria-live="polite"></p>
+  <button type="button" class="lb-btn lb-close" data-lb="close" aria-label="Fermer">&#x2715;</button>
+  <button type="button" class="lb-btn lb-prev" data-lb="prev" aria-label="Photo précédente">&#x2039;</button>
+  <figure>
+    <img id="lbImg" alt="" decoding="async">
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button type="button" class="lb-btn lb-next" data-lb="next" aria-label="Photo suivante">&#x203A;</button>
+</div>
 
 <script>
 'use strict';
@@ -1032,6 +1131,90 @@ section { scroll-margin-top: calc(var(--bandeau-h) + var(--header-h) + 12px); }
     }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
     spySections.forEach(function (s) { spyObserver.observe(s); });
   }
+
+  /* ===== GALERIE — "voir plus" + lightbox ===== */
+  const gallery = document.getElementById('gallery');
+  const galleryItems = Array.prototype.slice.call(gallery.querySelectorAll('.gallery-item'));
+  const moreBtn = document.getElementById('galleryMore');
+
+  moreBtn.addEventListener('click', function () {
+    galleryItems.forEach(function (item) { item.hidden = false; });
+    moreBtn.setAttribute('aria-expanded', 'true');
+    moreBtn.parentElement.hidden = true;
+    galleryItems[galleryItems.length - 1].focus({ preventScroll: true });
+  });
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCap = document.getElementById('lbCap');
+  const lbCount = document.getElementById('lbCount');
+  const lbButtons = Array.prototype.slice.call(lb.querySelectorAll('button'));
+  let lbIndex = -1;
+  let lbReturnFocus = null;
+
+  function lbShow(i) {
+    lbIndex = (i + galleryItems.length) % galleryItems.length;
+    const item = galleryItems[lbIndex];
+    lbImg.src = item.getAttribute('href');
+    lbImg.alt = item.querySelector('img').alt;
+    lbCap.textContent = item.querySelector('.cap').textContent;
+    lbCount.textContent = (lbIndex + 1) + ' / ' + galleryItems.length;
+    // Préchargement des voisines pour une navigation fluide
+    [lbIndex + 1, lbIndex - 1].forEach(function (n) {
+      const neighbour = galleryItems[(n + galleryItems.length) % galleryItems.length];
+      new Image().src = neighbour.getAttribute('href');
+    });
+  }
+  function lbOpen(i) {
+    lbReturnFocus = document.activeElement;
+    lbShow(i);
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lb.querySelector('.lb-close').focus();
+  }
+  function lbClose() {
+    lb.hidden = true;
+    lbImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lbReturnFocus && lbReturnFocus.focus) { lbReturnFocus.focus({ preventScroll: true }); }
+  }
+
+  galleryItems.forEach(function (item, i) {
+    item.addEventListener('click', function (e) { e.preventDefault(); lbOpen(i); });
+  });
+  lb.addEventListener('click', function (e) {
+    const btn = e.target.closest('[data-lb]');
+    if (btn) {
+      const action = btn.dataset.lb;
+      if (action === 'close') { lbClose(); }
+      else if (action === 'prev') { lbShow(lbIndex - 1); }
+      else if (action === 'next') { lbShow(lbIndex + 1); }
+    } else if (!e.target.closest('figure')) {
+      lbClose(); // clic sur le fond
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) { return; }
+    if (e.key === 'Escape') { lbClose(); }
+    else if (e.key === 'ArrowLeft') { lbShow(lbIndex - 1); }
+    else if (e.key === 'ArrowRight') { lbShow(lbIndex + 1); }
+    else if (e.key === 'Tab') {
+      // Focus confiné aux boutons de la lightbox
+      const first = lbButtons[0];
+      const last = lbButtons[lbButtons.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+  // Balayage tactile gauche/droite
+  let touchX = null;
+  lb.addEventListener('touchstart', function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (touchX === null) { return; }
+    const dx = e.changedTouches[0].clientX - touchX;
+    touchX = null;
+    if (Math.abs(dx) > 40) { lbShow(dx < 0 ? lbIndex + 1 : lbIndex - 1); }
+  }, { passive: true });
 
   /* ===== FORMULAIRE — feedback (action="#" à remplacer par Web3Forms/Formspree) ===== */
   const form = document.getElementById('devisForm');
